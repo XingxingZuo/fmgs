@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FMGS: Foundation Model Embedded 3D Gaussian Splatting
+for Holistic 3D Scene Understanding.">
+  <meta name="keywords" content="FMGS, Gaussian Splatting, Vision-Language Embeddings, Foundation Models, Open-Vocabulary
+Semantics ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FMGS: Foundation Model Embedded 3D Gaussian Splatting \\
+for Holistic 3D Scene Understanding</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6PYDPEBZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-L6PYDPEBZZ');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://yingyexin.github.io/simplemapping.html">
+            SimpleMapping
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title">FMGS: Foundation Model Embedded 3D Gaussian Splatting  for Holistic 3D Scene Understanding</h1> -->
+          <h1 class="title is-2 publication-title">FMGS: Foundation Model Embedded 3D Gaussian</h1>
+          <h1 class="title is-2 publication-title">Splatting for Holistic 3D Scene Understanding</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xingxingzuo.github.io/">Xingxing Zuo</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Pouya Samangouei<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yunwen Zhou<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yan Di<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Mingyang Li<sup>1</sup>,
+              </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Google AR</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.01970"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.01970"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+<!--               <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://xingxingzuo.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://xingxingzuo.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!--
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./resources/teaser.png"
+                type="video/mp4">
+      </video>
+      -->
+      <img src="./static/figures/le3gs_composited_relevancy.png" class="center">
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+        TL;DR: FMGS embeds foundation models to a 3D scene representation that seamlessly integrates 3G Gaussians and multi-resolution hash encodings (MHE). The trained scene representation supports open-vocabulary text query. Relevancy to the queries is shown.  
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Precisely perceiving the geometric and semantic properties of real-world 3D objects is crucial for the continued evolution of augmented reality and robotic applications. To this end, we present Foundation Model Embedded Gaussian Splatting (</i>FMGS</i>), which incorporates vision-language embeddings of foundation models into 3D Gaussian Splatting (GS). 
+          </p>
+          <p>
+            The key contribution of this work is an efficient method to reconstruct and represent 3D vision-language models. This is achieved by distilling feature maps generated from image-based foundation models into those rendered from our 3D model. To ensure high-quality rendering and fast training, we introduce a novel scene representation by integrating strengths from both GS and multi-resolution hash encodings (MHE). Our effective training procedure also introduces a pixel alignment loss that makes the rendered feature distance of same semantic entities close, following the pixel-level semantic boundaries.
+            Our results demonstrate remarkable multi-view semantic consistency, facilitating diverse downstream tasks,
+            beating state-of-the-art methods by 10.2 percent on open-vocabulary language-based object detection, despite that we are 851X faster for inference. This research explores the intersection of vision, language, and 3D scene representation, paving the way for enhanced scene understanding in uncontrolled real-world environments. We plan to release the code upon paper acceptance.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+    <!-- Paper teaser. -->
+    <!--
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> 
+    -->
+    <!--/ Paper video. -->
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Overview</h2>
+
+        <img src="./static/figures/overview_new.png" class="center" width="100%">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <em><b>FMGS training pipeline.</b> FMGS scene respresentation can render CLIP and DINO feature maps, which are compared against the low-resolution and pixel-misaligned feature maps extracted from pretarined foundation models.</em>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Add space between two divs -->
+    <div style="height: 50px;"></div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <img src="./static/figures/inference_new.png" class="center" width="70%">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <em><b>FMGS query pipeline at inference stage</b>. Given an open-vocabulary query, FMGS generates a relevancy map highlighting the relevant part of the rendered CLIP feature map to the query embedding. </em>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Add space between two divs -->
+    <div style="height: 50px;"></div>
+
+    <div class="content has-text-justified">
+      <h3 class="title is-4">Keypoints: </h3>
+      <p>
+        <strong>Novel semantic scene representation</strong>: We introduce a novel approach combining 3D Gaussians (parameterized by mean, covariance, opacity, and spherical harmonics) for geometry and appearance representation, with MHE for efficient semantic embedding. This approach addresses memory constraints in room-scale scenes including millions of 3D Gaussians.
+        <br>
+      </p>
+    </div>
+
+
+    <div class="content has-text-justified">
+      <p>
+        <strong>Multi-view consistent language embeddings</strong>: Our training process utilizes Gaussian-splatting based rendering from multiple views, ensuring consistency across 3D space in static scenarios. Language embeddings remain invariant to viewpoints, enforcing local proximity consistency within Gaussian volumes.
+        <br>
+      </p>
+    </div>
+
+
+    <div class="content has-text-justified">
+      <p>
+        <strong>Addressing pixel misalignment</strong>: We address pixel alignment challenges of CLIP features by extracting and aggregating them at multiple resolutions for a hybrid CLIP feature, which is used for supervising the training. Regularization with pixel-aligned DINO features and a novel dot-product similarity loss enhances spatial precision and object differentiation. 
+        <br>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px"> Experimental Results</h2>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <img src="./static/figures/le3gs_detection_1.png" class="center" width="100%">
+            <img src="./static/figures/le3gs_detection_2.png" class="center" width="100%">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                <em><b>Object detection results</b>. Left displays the ground-truth bounding boxes
+                (blue), our detected highest-relevancy pixel (green) and the one detected by LERF (red). Middle showcases our relevancy
+                score corresponding to the given text query. The text query is shown at the far left of each row. Right showcases LERF’s
+                relevancy score corresponding to the given text query. Our computed relevancy score is more focused on the target objects
+                linked to the query. </em>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Add space between two divs -->
+        <div style="height: 20px;"></div>
+    
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <img src="./static/figures/le3gs_segmentation_plusSAM.png" class="center" width="100%">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                <em><b>Semantic segmentation results</b>. In the rows from top to bottom, we display RGB images, ground-truth (GT)
+              segmentation masks, our refined segmentation results, our segmentation results, and the segmentation results obtained by
+              LERF scene representation. It’s essential to note that neither our method nor LERF was initially intended for the
+              segmentation task. Our primary aim is to evaluate the pixel accuracy of the relevance map computed from the rendered
+              CLIP features. We can further post-process and refine our 2D segmentation results by SAM and get the results shown
+              as ‘Ours-Refined’. </em>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Add space between two divs -->
+        <div style="height: 20px;"></div>
+
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <img src="./static/figures/vis_attachfeat2gs.png" class="center" width="100%">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                <em><b>PCA visulization of rendered features.</b> Qualitative comparison between the rendered DINO/CLIP feature maps with the scene presentation without MHE (attaching learnable feature vectors to individual Gaussians) and our scene representation with a integration of Gaussians and MHE.</em>
+              </p>
+            </div>
+
+          </div>
+        </div>
+    
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zuo2024fmgs,
+  title={Fmgs: Foundation model embedded 3d gaussian splatting for holistic 3d scene understanding},
+  author={Zuo, Xingxing and Samangouei, Pouya and Zhou, Yunwen and Di, Yan and Li, Mingyang},
+  journal={arXiv preprint arXiv:2401.01970},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
