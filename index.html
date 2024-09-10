@@ -179,19 +179,34 @@ for Holistic 3D Scene Understanding</title>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!--
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./resources/teaser.png"
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/bouquet_query_video.mp4"
                 type="video/mp4">
       </video>
-      -->
-      <img src="./static/figures/le3gs_composited_relevancy.png" class="center">
-      <h2 class="subtitle has-text-centered" style="margin-top: 15px">
-        TL;DR: FMGS embeds foundation models to a 3D scene representation that seamlessly integrates 3G Gaussians and multi-resolution hash encodings (MHE). The trained scene representation supports open-vocabulary text query. Relevancy to the queries is shown.  
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teatime_query_video.mp4"
+                type="video/mp4">
+      </video> -->
+      <!-- Container for videos -->
+      <div class="videos-container" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+        <!-- Video 1 -->
+        <video width="496" height="368" autoplay muted loop>
+          <source src="./static/videos/bouquet_query_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Video 2 -->
+        <video width="496" height="368" autoplay muted loop>
+          <source src="./static/videos/teatime_query_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        TL;DR: FMGS embeds foundation models to a 3D scene representation that seamlessly integrates 3G Gaussians and multi-resolution hash encodings (MHE). The trained scene representation supports open-vocabulary text query. Relevancy to the queries on LERF dataset is shown.  
       </h2>
     </div>
   </div>
 </section>
+
 
 
 <section class="section">
@@ -232,36 +247,24 @@ for Holistic 3D Scene Understanding</title>
   </div>
 </section>
 
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/bouquet_query_video.mp4"
+      <!--
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./resources/teaser.png"
                 type="video/mp4">
       </video>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teatime_query_video.mp4"
-                type="video/mp4">
-      </video> -->
-      <!-- Container for videos -->
-      <div class="videos-container" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
-        <!-- Video 1 -->
-        <video width="496" height="368" autoplay muted loop>
-          <source src="./static/videos/bouquet_query_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <!-- Video 2 -->
-        <video width="496" height="368" autoplay muted loop>
-          <source src="./static/videos/teatime_query_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <h2 class="subtitle has-text-centered">
-        Open-vocabulary query enabled by our FMGS on LERF datasets.
+      -->
+      <img src="./static/figures/le3gs_composited_relevancy.png" class="center">
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+        Relevancy to open-vocabulary queries enabled by our FMGS on LERF dataset.
       </h2>
     </div>
   </div>
 </section>
+
 
 
 
